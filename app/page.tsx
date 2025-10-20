@@ -9,10 +9,10 @@ import {
   Shield,
   Folder,
   Image as ImageIcon,
-  FileText, // Added PDF/Document icon
-  File, // Generic file icon
-  FileAudio, // Audio file icon
-  FileVideo, // Video file icon
+  FileText,
+  File,
+  FileAudio,
+  FileVideo,
   ArrowRight,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -25,12 +25,12 @@ export default function Home() {
 
   useEffect(() => {
     const iconInterval = setInterval(() => {
-      setFade(false); // Start fade-out
+      setFade(false);
       setTimeout(() => {
         setCurrentIconIndex((prevIndex) => (prevIndex + 1) % icons.length);
-        setFade(true); // Start fade-in
-      }, 500); // Half a second for fade-out
-    }, 3000); // Change icon every 3 seconds
+        setFade(true);
+      }, 500);
+    }, 3000);
 
     return () => clearInterval(iconInterval);
   }, [icons.length]);
@@ -39,7 +39,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col bg-zinc-950 text-zinc-100">
-      {/* Use the unified Navbar component */}
+      {/* Navbar */}
       <Navbar />
 
       {/* Main content */}
@@ -51,8 +51,7 @@ export default function Home() {
               <div className="space-y-6 text-center lg:text-left">
                 <div>
                   <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-white leading-tight">
-                    Store your{" "}
-                    <span className="text-amber-500">files</span> with ease
+                    Store your <span className="text-amber-500">files</span> with ease
                   </h1>
                   <p className="text-lg md:text-xl text-zinc-400">
                     Simple. Secure. Fast.
@@ -62,23 +61,32 @@ export default function Home() {
                 <div className="flex flex-wrap gap-4 pt-4 justify-center lg:justify-start">
                   <SignedOut>
                     <Link href="/sign-up">
-                      <Button size="lg" variant="solid" color="amber">
+                      <Button
+                        size="lg"
+                        variant="solid"
+                        className="bg-amber-500 hover:bg-amber-600 text-white"
+                      >
                         Get Started
                       </Button>
                     </Link>
                     <Link href="/sign-in">
-                      <Button size="lg" variant="flat" color="amber">
+                      <Button
+                        size="lg"
+                        variant="flat"
+                        className="border border-amber-500 text-amber-500 hover:bg-amber-500/10"
+                      >
                         Sign In
                       </Button>
                     </Link>
                   </SignedOut>
+
                   <SignedIn>
                     <Link href="/dashboard">
                       <Button
                         size="lg"
                         variant="solid"
-                        color="amber"
                         endContent={<ArrowRight className="h-4 w-4" />}
+                        className="bg-amber-500 hover:bg-amber-600 text-white"
                       >
                         Go to Dashboard
                       </Button>
@@ -92,7 +100,6 @@ export default function Home() {
                   {/* Pulsing background glow */}
                   <div className="absolute inset-0 bg-amber-500/20 rounded-full blur-3xl animate-pulse-light" />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    {/* Dynamic Rotating Icon with fade transition */}
                     <CurrentIcon
                       className={`h-28 md:h-36 w-28 md:w-36 text-amber-500 drop-shadow-lg transition-all duration-500 ease-in-out ${
                         fade ? "opacity-100 scale-100" : "opacity-0 scale-90"
@@ -160,8 +167,8 @@ export default function Home() {
                   <Button
                     size="lg"
                     variant="solid"
-                    color="amber"
                     endContent={<ArrowRight className="h-4 w-4" />}
+                    className="bg-amber-500 hover:bg-amber-600 text-white"
                   >
                     Let's Go
                   </Button>
@@ -173,8 +180,8 @@ export default function Home() {
                 <Button
                   size="lg"
                   variant="solid"
-                  color="amber"
                   endContent={<ArrowRight className="h-4 w-4" />}
+                  className="bg-amber-500 hover:bg-amber-600 text-white"
                 >
                   Dashboard
                 </Button>
@@ -184,7 +191,7 @@ export default function Home() {
         </section>
       </main>
 
-      {/* Simple footer */}
+      {/* Footer */}
       <footer className="bg-zinc-950 border-t border-zinc-800 py-4 md:py-6">
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
