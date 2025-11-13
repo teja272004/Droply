@@ -51,7 +51,8 @@ export default function Home() {
               <div className="space-y-6 text-center lg:text-left">
                 <div>
                   <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-white leading-tight">
-                    Store your <span className="text-amber-500">files</span> with ease
+                    Store your <span className="text-amber-500">files</span> with
+                    ease
                   </h1>
                   <p className="text-lg md:text-xl text-zinc-400">
                     Simple. Secure. Fast.
