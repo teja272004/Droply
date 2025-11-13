@@ -130,14 +130,14 @@ export default function Navbar({ user }: NavbarProps) {
   return (
     <header
       className={`bg-zinc-950 border-b border-zinc-800 sticky top-0 z-50 transition-shadow ${
-        isScrolled ? "shadow-md shadow-amber-500/10" : ""
+        isScrolled ? "shadow-md shadow-orange-500/10" : ""
       }`}
     >
       <div className="container mx-auto py-3 md:py-4 px-4 md:px-6">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 z-10">
-            <CloudUpload className="h-6 w-6 text-amber-500" />
+            <CloudUpload className="h-6 w-6 text-orange-500" />
             <h1 className="text-xl font-bold text-white">Droply</h1>
           </Link>
 
@@ -146,12 +146,18 @@ export default function Navbar({ user }: NavbarProps) {
             {/* Show these buttons when user is signed out */}
             <SignedOut>
               <Link href="/sign-in">
-                <Button variant="flat" color="amber">
+                <Button
+                  variant="flat"
+                  className="border border-orange-500 text-orange-500 hover:bg-orange-500/10"
+                >
                   Sign In
                 </Button>
               </Link>
               <Link href="/sign-up">
-                <Button variant="solid" color="amber">
+                <Button
+                  variant="solid"
+                  className="bg-orange-500 hover:bg-orange-600 text-white"
+                >
                   Sign Up
                 </Button>
               </Link>
@@ -162,7 +168,10 @@ export default function Navbar({ user }: NavbarProps) {
               <div className="flex items-center gap-4">
                 {!isOnDashboard && (
                   <Link href="/dashboard">
-                    <Button variant="flat" color="amber">
+                    <Button
+                      variant="flat"
+                      className="border border-orange-500 text-orange-500 hover:bg-orange-500/10"
+                    >
                       Dashboard
                     </Button>
                   </Link>
@@ -266,7 +275,10 @@ export default function Navbar({ user }: NavbarProps) {
                   className="w-full"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  <Button variant="flat" color="amber" className="w-full">
+                  <Button
+                    variant="flat"
+                    className="w-full border border-orange-500 text-orange-500 hover:bg-orange-500/10"
+                  >
                     Sign In
                   </Button>
                 </Link>
@@ -275,7 +287,10 @@ export default function Navbar({ user }: NavbarProps) {
                   className="w-full"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  <Button variant="solid" color="amber" className="w-full">
+                  <Button
+                    variant="solid"
+                    className="w-full bg-orange-500 hover:bg-orange-600 text-white"
+                  >
                     Sign Up
                   </Button>
                 </Link>
