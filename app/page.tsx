@@ -74,7 +74,7 @@ export default function Home() {
                       <Button
                         size="lg"
                         variant="flat"
-                        className="border border-amber-500 text-amber-500 hover:bg-amber-500/10"
+                        className="border border-orange-500 text-orange-500 hover:bg-orange-500/10"
                       >
                         Sign In
                       </Button>
